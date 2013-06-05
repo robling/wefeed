@@ -1,0 +1,9 @@
+name: wefeed
+version: 1
+
+handle:
+    - rewrite: if(!is_dir() && !is_file()) goto "index.php?%{QUERY_STRING}" 
+cron:
+    - description: cron test
+	  url: update/addtask
+	  schedule: every 5 hours

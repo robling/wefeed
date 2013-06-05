@@ -1,0 +1,29 @@
+.new_articles{
+    width: 60%;
+    padding: 40px 60px;
+    margin: 0 auto;
+    background: #fff;
+}
+small{
+    margin-left: 20px;
+    color: gray;
+}
+
+/*new_author*/
+.new_author{
+    width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+}
+.new_author div{
+    margin-top:20px;
+}
+.new_author label{
+    width: 60px;
+    display: inline-block;
+}
+.new_author textarea{
+    width: 300px;
+    height: 80px;
+}

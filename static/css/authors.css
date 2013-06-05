@@ -1,0 +1,103 @@
+.authors{
+    width: 100%;
+    margin: 0 auto;
+}
+.authors ul{
+    float:left;
+    width: 90%;
+    text-align: center;
+}
+.authors li{
+    display: inline-block; 
+    vertical-align: top;
+    text-align:left;
+    padding: 15px;
+    width: 23%;
+    min-width: 240px;
+    margin: 20px 3%;
+    background: #fff;  
+    border-top: 5px solid transparent;
+}
+.one_author:hover{
+    border-color: #f8800b;
+}
+.authors li a{
+    /*float: left;*/
+    display: block;
+}
+.one_author div{
+    border-bottom: 1px solid;
+    height:100px;
+    padding-left: 20px;
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+    margin: 0 10px 5px 0;
+    border-radius: 100%;
+    position: relative;
+}
+.one_author .author_name{
+    line-height: 80px;
+    display: inline;
+    position: relative;
+    top: -30px;
+    left: 20px;
+}
+.authors aside{
+    height: 100%;
+    width:8%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    min-width: 77px;
+}
+.authors .change{
+    display: block; 
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    text-align: center;
+    color: #f8800b;
+}
+.change span{
+    display: block;
+    height: 100px;
+    position: relative;
+    top: 30%;
+}
+
+.change:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+/*auther_page*/
+.author_page{
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px;
+    height: 600px; 
+    background-color:#fff; 
+}
+
+.author_page a{
+    display: inline-block;
+}
+.author_page .avatar{
+    margin: 0;
+}
+.author_page .author_name{
+    color: #f8800b;
+    display: none;
+}
+.author{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f8800b;
+}
+
+.articles{
+    padding: 40px;
+}
+.articles li{
+    margin-top: 10px;
+}
