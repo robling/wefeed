@@ -6,14 +6,13 @@
 		$divs = $html->find('div[class=msg_item news]');
 		$listpost = array();
 		$new_topmsg = $top_msg;
-		//$i=0;
+		
 		foreach($divs as $div){
-			//$i += 1;
 			$pLink = $div->link;
 			$parts = parse_url($pLink);
 			parse_str($parts['query'], $output);
+			dump($parts['query']);
 			$appmsgid = $output['amp;appmsgid'];//获得文章编号
-			
 			if($appmsgid > $top_msg){//比当前最新文章更新则录入
 				if($new_topmsg < $appmsgid){
 					$new_topmsg = $appmsgid;
@@ -23,7 +22,10 @@
 				$titleinner = $inner->find('h4',0);
 				$title = $titleinner->plaintext;
 				$title = trim($title);//我不知道为什么会多出来空格，只能剪掉。。。
-				$single = array('name'=>$name,'biz'=>$biz,'appmsgid'=>$appmsgid,'title'=>$title,);
+				$abstractinner = $inner->find('p[class=msg_desc]',0);
+				$abstract = $abstractinner->plaintext;
+				dump($abstract);
+				$single = array('name'=>$name,'biz'=>$biz,'appmsgid'=>$appmsgid,'title'=>$title,'url'=>$div->link,'abstract'=>$abstract);
 				array_push($listpost,$single);
 				$inner->clear();
 			}

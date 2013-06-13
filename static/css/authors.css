@@ -9,6 +9,8 @@
 }
 .authors li{
     display: inline-block; 
+    *display: inline;
+    *zoom: 1;
     vertical-align: top;
     text-align:left;
     padding: 15px;
@@ -17,6 +19,8 @@
     margin: 20px 3%;
     background: #fff;  
     border-top: 5px solid transparent;
+    transiton: border-color 0.6s ease-out;
+    -webkit-transition: border-color 0.6s ease-out;
 }
 .one_author:hover{
     border-color: #f8800b;
@@ -44,7 +48,7 @@
     top: -30px;
     left: 20px;
 }
-.authors aside{
+.authors .aside{
     height: 100%;
     width:8%;
     position: absolute;
@@ -81,6 +85,8 @@
 
 .author_page a{
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 .author_page .avatar{
     margin: 0;

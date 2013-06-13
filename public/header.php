@@ -16,7 +16,7 @@
                 <li><a href="/author">公众帐号</a></li>
                 <li><a href="/article">最新文章</a></li>
                 <li><a href="/update/newauthor">提交帐号</a></li>
-                <li><a href="/help">帮助</a></li>
+                <li><a href="/main/help">帮助</a></li>
             </ul>
         </div>
     </div>

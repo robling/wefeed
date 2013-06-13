@@ -9,10 +9,6 @@
 		$articles = $lpost->spPager(1, 15)->findAll(array('name'=>$info[name],"id DESC"));
 
 		$page = $lpost->spPager()->getPager();
-
-		foreach($articles as &$article){
-			$article['url'] = "http://mp.weixin.qq.com/mp/appmsg/show?__biz=".$article['biz']."&appmsgid=".$article['appmsgid']."&itemidx=1#wechat_redirect";
-		}
 		push($articles);
 	}
 
@@ -20,9 +16,7 @@
 		$lpost=spClass('lib_post');
 		$articles = $lpost->spPager(1, 15)->findAll(null,"id DESC");
 		$page = $lpost->spPager()->getPager();
-		foreach($articles as &$article){
-			$article['url'] = "http://mp.weixin.qq.com/mp/appmsg/show?__biz=".$article['biz']."&appmsgid=".$article['appmsgid']."&itemidx=1#wechat_redirect";
-		}
+
 		push($articles);
 	}
 	
@@ -48,6 +42,7 @@
 			$output .= "<item>
 			<title><![CDATA[".$line['title']."]]></title>
 			<link><![CDATA[".$line['url']."]]></link>
+			<description><![CDATA[".$line['abstract']."]]></description>
 			</item>";
 		}
 		$output .= "</channel>

@@ -1,16 +1,16 @@
 <?php require "header.php"; ?>
 
 <div class="main">
-    <section class="author_page">
-       <section class="author">
+    <div class="author_page">
+       <div class="author">
         <?php
 			$name = $info['name'];
 			echo "<div><a href='#' title='".$name."'><img class='avatar' src='".$info['image']."'></a>";
 			echo "<h4 class='author_name'>".$name."</h4></div>";
 			echo "<p class='author_des'>".$info['description']."</p>" 
         ?>
-        </section>
-        <section class="articles">
+        </div>
+        <div class="articles">
             <ul>
             <?php
             foreach ($articles as $key) {
@@ -20,7 +20,7 @@
             }
             ?>
             </ul>
-        </section>       
-    </section>
+        </div>       
+    </div>
 </div>
 <?php require "footer.php"; ?>

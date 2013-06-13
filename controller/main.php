@@ -23,11 +23,6 @@ class main extends spController
 		$lpost=spClass('lib_post');
 		$articles = $lpost->spPager($this->spArgs('page', 1), 20)->findAll(null,"id DESC");
 		$page = $lpost->spPager()->getPager();
-		// dump($page);
-		foreach($articles as &$article){
-			$article['url'] = "http://mp.weixin.qq.com/mp/appmsg/show?__biz=".$article['biz']."&appmsgid=".$article['appmsgid']."&itemidx=1#wechat_redirect";
-		}
-		// dump($articles);
 		if($notajax){
 			require './public/article.php';
 		}
@@ -42,6 +37,7 @@ class main extends spController
 		$authors = $lauthor->spPager($this->spArgs('page', 1), 6)->findAll();
 		foreach($authors as &$author){
 			$author['image'] = "http://wefeed-img.stor.sinaapp.com/".$author['weid'].".png";
+			$author['feed'] = "http://wefeed.sinaapp.com/feed/".$author['weid'];
 		}
 		//dump($authors);
 		$page = $lauthor->spPager()->getPager();
@@ -62,12 +58,8 @@ class main extends spController
 		$condition=array('weid'=>$weid,);
 		$info = $author->find($condition);
 		$info['image'] = "http://wefeed-img.stor.sinaapp.com/".$info['weid'].".png";
-		$articles = $lpost->spPager($this->spArgs('page', 1), 10)->findAll(array('name'=>$info[name],"id DESC"));
-		foreach($articles as &$article){
-			// 重定向方式载入文章
-			// $article['url'] = "/redirect/?biz=".rawurlencode(convert_uuencode($article['biz']))."&appmsgid=".$article['appmsgid'];
-			$article['url'] = "http://mp.weixin.qq.com/mp/appmsg/show?__biz=".$article['biz']."&appmsgid=".$article['appmsgid']."&itemidx=1#wechat_redirect";
-		}
+		$info['feed'] = "http://wefeed.sinaapp.com/feed/".$weid;
+		$articles = $lpost->spPager($this->spArgs('page', 1), 10)->findAll(array('name'=>$info['name'],),"id DESC");
 		$page = $lpost->spPager()->getPager();
 		//dump($page);
 		if($notajax){

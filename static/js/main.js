@@ -10,19 +10,19 @@ $(document).ready(function() {
    });
 
 
-   $("#logo").hover(function() {
-        $(this).animate({marginLeft: "+=30px"}, 600);
-    }, function() {
-        $(this).animate({marginLeft: "-=30px"}, 600);
-    });
+   // $("#logo").hover(function() {
+   //      $(this).animate({marginLeft: "+=30px"}, 600);
+   //  }, function() {
+   //      $(this).animate({marginLeft: "-=30px"}, 600);
+   //  });
 
 
-    //hover导航时动画
-    $(".nav a").hover(function() {
-        $(this).animate({background: "#ff7b3a"}, 600);
-    }, function() {
-        // $(this).animate({opacity: 1.0}, 300);
-    });
+    // //hover导航时动画
+    // $(".nav a").hover(function() {
+    //     $(this).animate({background: "#ff7b3a"}, 600);
+    // }, function() {
+    //     // $(this).animate({opacity: 1.0}, 300);
+    // });
     //hover某个作者时的动画
     // $(".one_author").hover(function() {
     //     $(this).css("border-color", "#f8800b");
@@ -49,6 +49,7 @@ $(document).ready(function() {
         $.ajax({
             type: "get",
             url: url,
+            cache: false,
             dataType : "xml",
             beforeSend: function() {
                 $(".loading").show();

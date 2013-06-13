@@ -1,6 +1,6 @@
 <?php require "header.php"; ?>
 <div class="main">
-    <section class="new_articles articles">
+    <div class="new_articles articles">
         <ul>
             <?php
             foreach ($articles as $key) {
@@ -13,6 +13,6 @@
             ?>
         </ul>   
         <br clear="both">         
-    </section>
+    </div>
 </div>
 <?php require "footer.php"; ?>

@@ -52,10 +52,15 @@ a:active{
     color: #f8800b;
     font-size: 30px;
     line-height: 60px;
+    transition: margin-top 0.5s ease-out;
+    --webkit-transform: margin-top 0.5s ease-out;
+}
+#logo:hover{
+    margin-top: 20px;
 }
 
 .nav{
-    margin-left: 300px;
+    margin-left: 30%;
 }
 .nav li{
     float: left;
@@ -65,10 +70,11 @@ a:active{
 .nav a{
     color:#fff;
     padding-top: 15px;
-    border-top: 5px solid transparent;
+    transition: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
 }
-.nav a:hover, .nav a:visited{
-    border-color: #009CDC;
+.nav a:hover{
+    color: #f8800b;
 }
 
 /*main*/
@@ -90,8 +96,16 @@ a:active{
     display: none;
 }
 /*footer*/
-footer{
+.footer{
     background-color: #2c2b2b;
     height: 60px;
     width: 100%;
+}
+
+.help{
+    width: 60%;
+    min-width: 200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
 }

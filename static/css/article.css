@@ -22,6 +22,8 @@ small{
 .new_author label{
     width: 60px;
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 .new_author textarea{
     width: 300px;
